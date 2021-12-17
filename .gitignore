@@ -13,3 +13,6 @@ npm-debug.log
 yarn-error.log
 .env
 *.DS_Store
+public
+public/css/*
+yarn.lock
