@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Branch;
-use App\Country;
-use App\Vendor;
-use App\VendorCategory;
+use App\Models\Branch;
+use App\Models\Country;
+use App\Models\Vendor;
+use App\Models\VendorCategory;
+
 use Illuminate\Http\Request;
 use Session;
 

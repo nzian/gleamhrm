@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\AttendanceSummary;
-use App\Branch;
-use App\Department;
-use App\Employee;
-use App\Leave;
+use App\Models\AttendanceSummary;
+use App\Models\Branch;
+use App\Models\Department;
+use App\Models\Employee;
+use App\Models\Leave;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Support\Facades\Auth;

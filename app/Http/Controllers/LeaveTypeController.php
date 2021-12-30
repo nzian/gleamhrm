@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\LeaveType;
+use App\Models\LeaveType;
 use Illuminate\Http\Request;
 use Session;
 

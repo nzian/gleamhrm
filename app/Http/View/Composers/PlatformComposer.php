@@ -2,7 +2,7 @@
 
 namespace App\Http\View\Composers;
 
-use App\Platform;
+use App\Models\Platform;
 use Carbon\Carbon;
 use Illuminate\View\View;
 

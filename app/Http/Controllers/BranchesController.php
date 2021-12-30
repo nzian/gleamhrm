@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Branch;
+use App\Models\Branch;
+
 use App\Traits\MetaTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

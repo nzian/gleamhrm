@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Employee;
+use App\Models\Employee;
 use App\Traits\MetaTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

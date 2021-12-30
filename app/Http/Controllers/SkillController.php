@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Employee;
-use App\EmployeeSkill;
-use App\Skill;
+use App\Models\Employee;
+use App\Models\EmployeeSkill;
+use App\Models\Skill;
+
 use Illuminate\Http\Request;
 use Session;
 

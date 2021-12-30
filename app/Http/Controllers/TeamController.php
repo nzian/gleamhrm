@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Department;
-use App\Employee;
-use App\Team;
+use App\Models\Department;
+use App\Models\Employee;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Session;
 

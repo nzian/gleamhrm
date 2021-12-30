@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Faq;
-use App\FaqCategory;
+use App\Models\Faq;
+use App\Models\FaqCategory;
 use Illuminate\Http\Request;
 use Session;
 

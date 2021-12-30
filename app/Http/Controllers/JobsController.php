@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Branch;
-use App\Department;
-use App\Designation;
-use App\Job;
-use App\Skill;
+use App\Models\Branch;
+use App\Models\Department;
+use App\Models\Designation;
+use App\Models\Job;
+use App\Models\Skill;
 use App\Traits\MetaTrait;
 use Illuminate\Http\Request;
 use Session;

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Document;
+use App\Models\Document;
+
 use App\Traits\MetaTrait;
 use Illuminate\Http\Request;
 use Session;

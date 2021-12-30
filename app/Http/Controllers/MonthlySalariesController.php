@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\MonthlySalaries;
+use App\Models\MonthlySalaries;
 use Illuminate\Http\Request;
 
 class MonthlySalariesController extends Controller

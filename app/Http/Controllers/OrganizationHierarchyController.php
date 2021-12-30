@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Designation;
-use App\Employee;
-use App\OrganizationHierarchy;
+use App\Models\Designation;
+use App\Models\Employee;
+use App\Models\OrganizationHierarchy;
+
 use App\Traits\MetaTrait;
 use Illuminate\Http\Request;
 use Session;

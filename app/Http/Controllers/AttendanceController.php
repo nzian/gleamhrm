@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Attendance;
-use App\AttendanceBreak;
-use App\AttendanceCorrection;
-use App\AttendanceSummary;
-use App\Branch;
-use App\Employee;
-use App\Leave;
-use App\OrganizationHierarchy;
+use App\Models\Attendance;
+use App\Models\AttendanceBreak;
+use App\Models\AttendanceCorrection;
+use App\Models\AttendanceSummary;
+use App\Models\Branch;
+use App\Models\Employee;
+use App\Models\Leave;
+use App\Models\OrganizationHierarchy;
+
 use App\Traits\MetaTrait;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;

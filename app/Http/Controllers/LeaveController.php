@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\AttendanceSummary;
-use App\Branch;
-use App\Employee;
-use App\EmployeeLeaveType;
-use App\Leave;
-use App\LeaveType;
+use App\Models\AttendanceSummary;
+use App\Models\Branch;
+use App\Models\Employee;
+use App\Models\EmployeeLeaveType;
+use App\Models\Leave;
+use App\Models\LeaveType;
+
 use App\Mail\AdminApplyLeaveMail;
 use App\Mail\ApplyLeaveMail;
 use App\Mail\LeaveStatusMail;
-use App\OrganizationHierarchy;
+use App\Models\OrganizationHierarchy;
+
 use App\Traits\MetaTrait;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;

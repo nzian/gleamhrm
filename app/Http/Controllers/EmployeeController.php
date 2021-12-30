@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Branch;
-use App\Department;
-use App\Designation;
-use App\Employee;
-use App\LeaveType;
+use App\Models\Branch;
+use App\Models\Department;
+use App\Models\Designation;
+use App\Models\Employee;
+use App\Models\LeaveType;
+
 use App\Mail\CompanyPoliciesMail;
 use App\Mail\EmailPasswordChange;
 use App\Mail\UpdateAccount;
-use App\OrganizationHierarchy;
-use App\Salary;
-use App\Team;
-use App\TeamMember;
+use App\Models\OrganizationHierarchy;
+use App\Models\Salary;
+use App\Models\Team;
+use App\Models\TeamMember;
+
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;

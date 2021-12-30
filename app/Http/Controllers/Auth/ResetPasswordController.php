@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Employee;
+use App\Models\Employee;
+
 use App\Http\Controllers\Controller;
-use App\PasswordReset;
+use App\Models\PasswordReset;
+
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;

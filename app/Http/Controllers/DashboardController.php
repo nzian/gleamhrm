@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Applicant;
-use App\AttendanceSummary;
-use App\Branch;
-use App\Designation;
-use App\Employee;
-use App\Job;
-use App\Leave;
+use App\Models\Applicant;
+use App\Models\AttendanceSummary;
+use App\Models\Branch;
+use App\Models\Designation;
+use App\Models\Employee;
+use App\Models\Job;
+use App\Models\Leave;
+
 use App\Mail\FeedbackMail;
 use App\Mail\Reminder;
 use App\Traits\MetaTrait;
@@ -24,6 +25,7 @@ class DashboardController extends Controller
 
     public function index()
     {
+
         $this->meta['title'] = 'Applicants';
         $dates = [];
         $applicants = Applicant::where('recruited', 0)->count();

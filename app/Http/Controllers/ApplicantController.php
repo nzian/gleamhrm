@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Applicant;
-use App\Job;
+use App\Models\Applicant;
+use App\Models\Job;
+
 use App\Mail\Reminder;
-use App\Skill;
+use App\Models\Skill;
+
 use App\Traits\MetaTrait;
 use Illuminate\Http\Request;
 use Mail;

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\AttendanceSummary;
-use App\Branch;
-use App\Employee;
-use App\Leave;
-use App\Salary;
+use App\Models\AttendanceSummary;
+use App\Models\Branch;
+use App\Models\Employee;
+use App\Models\Leave;
+use App\Models\Salary;
+
 use App\Traits\MetaTrait;
 use Box\Spout\Common\Type;
 use Box\Spout\Writer\WriterFactory;

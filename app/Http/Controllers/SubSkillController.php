@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Skill;
-use App\SubSkill;
+use App\Models\Skill;
+use App\Models\SubSkill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Employee;
+use App\Models\Employee;
+
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use DB;

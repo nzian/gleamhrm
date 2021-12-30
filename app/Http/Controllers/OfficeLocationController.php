@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\OfficeLocation;
+use App\Models\OfficeLocation;
+
 use App\Traits\MetaTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;

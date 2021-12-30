@@ -40,7 +40,7 @@
     <script src="{{ asset('assets/backend/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Chart Script -->
-    <script src="{{ asset('assets/backend/plugins/Chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/plugins/chartjs/Chart.min.js') }}"></script>
     
     <!-- jquery-validation -->
     <script src="{{ asset('assets/backend/plugins/jquery-validation/jquery.validate.min.js') }}"></script>

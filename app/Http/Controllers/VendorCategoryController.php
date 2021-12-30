@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\VendorCategory;
+use App\Models\VendorCategory;
 use Illuminate\Http\Request;
 use Session;
+
 
 class VendorCategoryController extends Controller
 {
