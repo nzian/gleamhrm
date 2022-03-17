@@ -8,19 +8,20 @@
 </head>
 
 <body>
-<b>Hi {{$employee->firstname}} {{$employee->lastname}}</b>,
-<br>
+    <b>Hi {{$employee->firstname}} {{$employee->lastname}}</b>,
+    <br>
 
-<p>Your account has been Updated
-</p>
-Email:{{$employee->official_email}}
-<br>
-@if($password!='')
+    <p>Your account has been Updated
+    </p>
+    Email:{{$employee->official_email}}
+    <br>
+    @if($password!='')
     <br>Your New Password: {{$password}}
-@endif
-<br>
-<br>
-Note: If is there any problem the contact hr@glowlogix.com.
-<br>
+    @endif
+    <br>
+    <br>
+    Note: If is there any problem the contact info@tritechfirm.com.
+    <br>
 </body>
+
 </html>

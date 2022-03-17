@@ -283,7 +283,6 @@ class SalarySlipController extends Controller
                 'month'       => $month,
                 'departments' => $departments,
             ]);
-
             return $pdf->stream();
         }
     }

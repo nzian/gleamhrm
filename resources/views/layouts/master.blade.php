@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @if(isset($platform->logo))
-      <link rel="icon" type="image/png" sizes="16x16" href="{{asset($platform->logo)}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset($platform->logo)}}">
     @else
-        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/company_logo.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/company_logo.png')}}">
     @endif
     <title>HRM | @if(isset($platform->name)) {{$platform->name}} @else Company Name @endif</title>
 
@@ -32,43 +33,47 @@
     <link rel="stylesheet" href="{{ asset('assets/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 
     <!-- DataTables StyleSheet -->
-    <link rel="stylesheet" href="{{ asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
     <!-- jQuery Script -->
     <script src="{{ asset('assets/backend/plugins/jquery/jquery.min.js') }}"></script>
 
     <!-- Chart Script -->
-    <script src="{{ asset('assets/backend/plugins/chartjs/Chart.min.js') }}"></script>
-    
+    <script src="{{ asset('assets/backend/plugins/chart.js/Chart.min.js') }}"></script>
+
     <!-- jquery-validation -->
     <script src="{{ asset('assets/backend/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('assets/backend/plugins/jquery-validation/additional-methods.min.js') }}"></script>
-  </head>
-  <body class="hold-transition sidebar-mini layout-fixed">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-      <!-- Navbar Start -->
-      @include('layouts.partials.navbar')
-      <!-- Navbar End -->
+        <!-- Navbar Start -->
+        @include('layouts.partials.navbar')
+        <!-- Navbar End -->
 
-      <!-- Left Sidebar Container Start -->
-      @include('layouts.partials.left-sidebar')
-      <!-- Left Sidebar Container End -->
+        <!-- Left Sidebar Container Start -->
+        @include('layouts.partials.left-sidebar')
+        <!-- Left Sidebar Container End -->
 
-      <!-- Page Content Start -->
-      <div class="content-wrapper">
-        @yield('content')
-      </div>
-      <!-- Page Content End -->
+        <!-- Page Content Start -->
+        <div class="content-wrapper">
+            @yield('content')
+        </div>
+        <!-- Page Content End -->
 
-      <!-- Right Sidebar Container Start -->
-      @include('layouts.partials.right-sidebar')
-      <!-- Right Sidebar Container End -->
+        <!-- Right Sidebar Container Start -->
+        @include('layouts.partials.right-sidebar')
+        <!-- Right Sidebar Container End -->
 
-      <!-- Main Footer Start -->
-      @include('layouts.partials.footer')
-      <!-- Main Footer End -->
+        <!-- Main Footer Start -->
+        @include('layouts.partials.footer')
+        <!-- Main Footer End -->
     </div>
 
     <!-- REQUIRED SCRIPTS -->
@@ -94,5 +99,6 @@
     <script src="{{ asset('assets/backend/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('assets/backend/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('assets/backend/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-  </body>
+</body>
+
 </html>

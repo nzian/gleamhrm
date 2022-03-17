@@ -61,18 +61,10 @@
                                         <input type="text" name="lastname" aria-describedby="lastname" value="{{ old('lastname') }}" class="form-control " placeholder="Enter Last Name">
                                     </div>
                                 </div>
-                                <!--/span-->
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">Personal Email<span class="text-danger">*</span></label>
-                                        <input type="email" name="personal_email" aria-describedby="personal_email" value="{{ old('personal_email') }}"   class="form-control " placeholder="Enter Personal Email">
-                                    </div>
-                                </div>
-                                <!--/span-->
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Official Email<span class="text-danger">*</span></label>
-                                        <input type="email" name="official_email" aria-describedby="official_email" value="{{ old('official_email') }}" class="form-control " placeholder="Enter Official Email">
+                                        <label class="control-label">Identity#<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control " placeholder="Enter Identity Number" name="identity_no" value="{{ old('identity_no') }}" maxlength="13">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -193,10 +185,24 @@
                                         <input type="text"  class="form-control" placeholder="Enter Contact Number" name="contact_no" value="{{ old('contact_no') }}" pattern="[0-9]{11}">
                                     </div>
                                 </div>
+                                <!--/span-->
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="control-label">Identity#<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control " placeholder="Enter Identity Number" name="identity_no" value="{{ old('identity_no') }}" maxlength="13">
+                                        <label class="control-label">Personal Email<span class="text-danger">*</span></label>
+                                        <input type="email" name="personal_email" aria-describedby="personal_email" value="{{ old('personal_email') }}"   class="form-control " placeholder="Enter Personal Email">
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Official Email<span class="text-danger">*</span></label>
+                                        <input type="email" name="official_email" aria-describedby="official_email" value="{{ old('official_email') }}" class="form-control " placeholder="Enter Official Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">City<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter City" name="city" value="{{ old('city') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -211,12 +217,7 @@
                                         <textarea rows="4" class="form-control" placeholder="Enter Current Address" name="current_address">{{ old('current_address') }}</textarea>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="control-label">City<span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter City" name="city" value="{{ old('city') }}">
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <h5 class="pt-3"><strong>Emergency Contact</strong></h5>
@@ -231,11 +232,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="control-label">Emergency Contact Relationship<span class="text-danger">*</span></label>
-                                        <select class="form-control custom-select" name="emergency_contact_relationship">
-                                            <option value="father" @if(old("emergency_contact_relationship") == "father") selected @endif>Father</option>
-                                            <option value="brother" @if(old('emergency_contact_relationship') == "brother") selected @endif>Brother</option>
-                                            <option value="mother" @if(old('emergency_contact_relationship') == "mother") selected @endif>Mother</option>
-                                        </select>
+                                        <input type="text" class="form-control" placeholder="Enter Emergency Contact Relation" name="emergency_contact_relationship" value="{{ old('emergency_contact_relationship') }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
