@@ -13,6 +13,8 @@
 
 use App\Applicant;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     if (Auth::user()) {

@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'log'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@glowlogix.com'),
-        'name'    => env('MAIL_FROM_NAME', 'GlowLogix'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@tritechfirm.com'),
+        'name'    => env('MAIL_FROM_NAME', 'CSM BD'),
     ],
 
     /*

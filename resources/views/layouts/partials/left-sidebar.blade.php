@@ -53,6 +53,51 @@
             </p>
           </a>
         </li>
+         @if(Auth::user()->isAllowed('OrganizationHierarchyController:index') || Auth::user()->isAllowed('BranchController:index') || Auth::user()->isAllowed('DepartmentController:index') || Auth::user()->isAllowed('DesignationController:index'))
+          <li @if(str_contains( Request::fullUrl(),'organization_hierarchy') || str_contains(Request::fullUrl(),'branch') || str_contains(Request::fullUrl(),'department') || str_contains(Request::fullUrl(),'designations')) class="nav-item menu-open" @else class="nav-item" @endif>
+            <a href="#" @if(str_contains( Request::fullUrl(),'organization_hierarchy') || str_contains(Request::fullUrl(),'branch') || str_contains(Request::fullUrl(),'department') || str_contains(Request::fullUrl(),'designations')) class="nav-link active" @else class="nav-link" @endif>
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Organization
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              @if(Auth::user()->isAllowed('BranchController:index'))
+                <li class="nav-item">
+                  <a href="{{ route('branch.index') }}" @if(str_contains(Request::fullUrl(),'branch')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Branches</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('DepartmentController:index'))
+                <li class="nav-item">
+                  <a href="{{route('departments.index')}}" @if(str_contains(Request::fullUrl(),'department')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Departments</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('DesignationController:index'))
+                <li class="nav-item">
+                  <a href="{{route('designations.index')}}" @if(str_contains(Request::fullUrl(),'designation')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Designations</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('OrganizationHierarchyController:index'))
+                <li class="nav-item">
+                  <a href="{{route('organization_hierarchy.index')}}" @if(str_contains(Request::fullUrl(),'organization_hierarchy'))  class="nav-link active" @else  class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Org Chart</p>
+                  </a>
+                </li>
+              @endif
+            </ul>
+          </li>
+        @endif
         @if(Auth::user()->isAllowed('ApplicantController:index') && Auth::user()->isAllowed('JobsController:index'))
           <li @if(request()->is('applicants/hired') || request()->is('job') || request()->is('applicant') || request()->is('job/create') || request()->is('job/*/edit')) class="nav-item menu-open" @else class="nav-item" @endif>
             <a href="#" @if(request()->is('applicants/hired') || request()->is('job') || request()->is('applicant') || request()->is('job/create') || request()->is('job/*/edit')) class="nav-link active" @else class="nav-link" @endif>
@@ -63,14 +108,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              @if(Auth::user()->isAllowed('ApplicantController:index'))
+              {{-- @if(Auth::user()->isAllowed('ApplicantController:index'))
                 <li class="nav-item">
                   <a href="{{route('applicants')}}" @if(request()->is('applicants/hired') || request()->is('applicant')) class="nav-link active" @else class="nav-link" @endif>
                     <i class="far fa-circle nav-icon"></i>
                     <p>Application</p>
                   </a>
                 </li>
-              @endif
+              @endif --}}
               @if(Auth::user()->isAllowed('JobsController:index'))
                 <li class="nav-item">
                   <a href="{{route('job.index')}}" @if(request()->is('job/create') || request()->is('job') || request()->is('job/*/edit'))  class="nav-link active" @else class="nav-link" @endif>
@@ -82,6 +127,7 @@
             </ul>
           </li>
         @endif
+
         @if(Auth::user()->isAllowed('EmployeeController:index') || Auth::user()->isAllowed('OrganizationHierarchyController:index') || Auth::user()->isAllowed('TeamController:index') || Auth::user()->isAllowed('VendorController:index'))
           <li @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member')) class="nav-item menu-open" @else class="nav-item" @endif>
             <a href="#" @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member')) class="nav-link active" @else class="nav-link" @endif>
@@ -97,14 +143,6 @@
                   <a href="{{route('employees')}}" @if(request()->is('employees') || request()->is('employee/create') || request()->is('employee/edit/*')) class="nav-link active" @else class="nav-link" @endif>
                     <i class="far fa-circle nav-icon"></i>
                     <p>Employees</p>
-                  </a>
-                </li>
-              @endif
-              @if(Auth::user()->isAllowed('OrganizationHierarchyController:index'))
-                <li class="nav-item">
-                  <a href="{{route('organization_hierarchy.index')}}" @if(str_contains(Request::fullUrl(),'organization_hierarchy'))  class="nav-link active" @else  class="nav-link" @endif>
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Org Chart</p>
                   </a>
                 </li>
               @endif
@@ -126,6 +164,27 @@
               @endif
             </ul>
           </li>
+        @endif
+        @if(Auth::user()->isAllowed('RolePermissionsController:index'))
+        <li @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-item menu-open" @else class="nav-item" @endif>
+          <a href="#" @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
+            <i class="nav-icon mdi mdi-apps pl-1"></i>
+            <p>
+              Manage Roles
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            @if(Auth::user()->isAllowed('RolePermissionsController:index'))
+              <li class="nav-item">
+                <a href="{{route('roles_permissions')}}" @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Roles And Permissions</p>
+                </a>
+              </li>
+            @endif
+          </ul>
+        </li>
         @endif
         <li @if(request()->is('attendance/today_timeline') || request()->is('my/attendance') || request()->is('my/attendance/*') || request()->is('add/attendance/*/*') || request()->is('attendance/create_break/*/*') || request()->is('attendance/timeline') || request()->is('attendance/create_break') || request()->is('leave/create') || request()->is('leave/admin_create') || request()->is('leave/admin_create/*') || request()->is('my_leaves') || request()->is('employee_leaves') || str_contains(Request::fullUrl(),'leave/edit')|| str_contains(Request::fullUrl(),'leave/show')) class="nav-item menu-open" @else class="nav-item" @endif>
           <a href="#" @if(request()->is('attendance/today_timeline') || request()->is('my/attendance') || request()->is('my/attendance/*') || request()->is('add/attendance/*/*') || request()->is('attendance/create_break/*/*') || request()->is('attendance/timeline') || request()->is('attendance/create_break') || request()->is('leave/create') || request()->is('leave/admin_create') || request()->is('leave/admin_create/*') || request()->is('my_leaves') || request()->is('employee_leaves') || str_contains(Request::fullUrl(),'leave/edit')|| str_contains(Request::fullUrl(),'leave/show')) class="nav-link active" @else class="nav-link" @endif>
@@ -189,30 +248,6 @@
                   <a href="{{ route('documents') }}" @if(str_contains(Request::fullUrl(),'documents')) class="nav-link active" @else class="nav-link" @endif>
                     <i class="far fa-circle nav-icon"></i>
                     <p>Documents</p>
-                  </a>
-                </li>
-              @endif
-              @if(Auth::user()->isAllowed('BranchController:index'))
-                <li class="nav-item">
-                  <a href="{{ route('branch.index') }}" @if(str_contains(Request::fullUrl(),'branch')) class="nav-link active" @else class="nav-link" @endif>
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Branches</p>
-                  </a>
-                </li>
-              @endif
-              @if(Auth::user()->isAllowed('DepartmentController:index'))
-                <li class="nav-item">
-                  <a href="{{route('departments.index')}}" @if(str_contains(Request::fullUrl(),'department')) class="nav-link active" @else class="nav-link" @endif>
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Departments</p>
-                  </a>
-                </li>
-              @endif
-              @if(Auth::user()->isAllowed('DesignationController:index'))
-                <li class="nav-item">
-                  <a href="{{route('designations.index')}}" @if(str_contains(Request::fullUrl(),'designation')) class="nav-link active" @else class="nav-link" @endif>
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Designations</p>
                   </a>
                 </li>
               @endif
@@ -293,27 +328,7 @@
             </li> -->
           </ul>
         </li>
-        @if(Auth::user()->isAllowed('RolePermissionsController:index'))
-        <li @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-item menu-open" @else class="nav-item" @endif>
-          <a href="#" @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
-            <i class="nav-icon mdi mdi-apps pl-1"></i>
-            <p>
-              Manage Roles
-              <i class="fas fa-angle-left right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            @if(Auth::user()->isAllowed('RolePermissionsController:index'))
-              <li class="nav-item">
-                <a href="{{route('roles_permissions')}}" @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Roles And Permissions</p>
-                </a>
-              </li>
-            @endif
-          </ul>
-        </li>
-        @endif
+        
         <li @if(request()->is('contact') || request()->is('faq')) class="nav-item menu-open pb-3 mb-5" @else class="nav-item pb-3 mb-5" @endif>
           <a href="#" @if(request()->is('contact') || request()->is('faq')) class="nav-link active" @else class="nav-link" @endif>
             <i class="nav-icon fas fa-calendar-alt"></i>

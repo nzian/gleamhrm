@@ -115,14 +115,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Personal Email<span class="text-danger">*</span></label>
-                                                    <input type="email" name="personal_email" value="{{old('personal_email',$employee->personal_email)}}"  class="form-control" placeholder="Enter Personal Email"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">Official Email<span class="text-danger">*</span></label>
-                                                    <input type="email" name="official_email" value="{{old('official_email',$employee->official_email)}}" class="form-control" placeholder="Enter Official Email"/>
+                                                    <label class="control-label">Identity#<span class="text-danger">*</span></label>
+                                                    <input type="text"  class="form-control " placeholder="Enter Identity Number" name="identity_no" value="{{old('identity_no',$employee->identity_no)}}" maxlength="13" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -241,10 +235,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="control-label">Identity#<span class="text-danger">*</span></label>
-                                                    <input type="text"  class="form-control " placeholder="Enter Identity Number" name="identity_no" value="{{old('identity_no',$employee->identity_no)}}" maxlength="13" />
+                                                    <label class="control-label">Personal Email<span class="text-danger">*</span></label>
+                                                    <input type="email" name="personal_email" value="{{old('personal_email',$employee->personal_email)}}"  class="form-control" placeholder="Enter Personal Email"/>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Official Email<span class="text-danger">*</span></label>
+                                                    <input type="email" name="official_email" value="{{old('official_email',$employee->official_email)}}" class="form-control" placeholder="Enter Official Email"/>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                         <h5 class="pt-3"><strong>Emergency Contact</strong></h5>
                                         <hr class="mt-0">
@@ -258,11 +259,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Emergency Contact Relationship<span class="text-danger">*</span></label>
-                                                    <select class="form-control custom-select" name="emergency_contact_relationship">
-                                                        <option value="father" @if($employee->emergency_contact_relationship == "father") selected @endif>Father</option>
-                                                        <option value="brother" @if($employee->emergency_contact_relationship == "brother") selected @endif>Brother</option>
-                                                        <option value="mother" @if($employee->emergency_contact_relationship == "mother") selected @endif>Mother</option>
-                                                    </select>
+                                                    <input type="text"  class="form-control " placeholder="Enter Emergency Contact Number" name="emergency_contact_relationship" value="{{old('emergency_contact_relationship',$employee->emergency_contact_relationship)}}"/>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">
