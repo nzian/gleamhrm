@@ -41,6 +41,10 @@ class Employee extends Authenticatable
         return $this->hasMany('App\AttendanceSummary');
     }
 
+    public function desciplinaries() {
+        return $this->hasMany(Desciplinary::class);
+    }
+
     public function salary()
     {
         return $this->hasOne(Salary::class, 'employee_id');
@@ -73,6 +77,14 @@ class Employee extends Authenticatable
         else{
             return 1;
         }*/
+    }
+
+    public function assets() {
+        return $this->hasMany(HandOverAsset::class, 'employee_id', 'id');
+    }
+
+    public function notices() {
+        return $this->hasMany(Notices::class, 'created_by', 'id');
     }
 
     public function department()

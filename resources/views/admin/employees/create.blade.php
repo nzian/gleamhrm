@@ -174,6 +174,24 @@
                                         <input type="text" name="gross_salary" aria-describedby="gross_salary" value="{{ old('gross_salary') }}"  class="form-control " placeholder="Enter Salary">
                                     </div>
                                 </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Bank Name</label>
+                                        <input type="text" name="bank_name" aria-describedby="bank_name" value="{{ old('bank_name') }}"  class="form-control " placeholder="Enter Bank Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Branch Name</label>
+                                        <input type="text" name="branch_name" aria-describedby="branch_name" value="{{ old('branch_name') }}"  class="form-control " placeholder="Enter Branch Name">
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="control-label">Account Number</label>
+                                        <input type="text" name="account_number" aria-describedby="account_number" value="{{ old('account_number') }}"  class="form-control " placeholder="Enter Account Number">
+                                    </div>
+                                </div>
                             </div>
 
                             <h5 class="pt-3"><strong>Contact Information</strong></h5>

@@ -392,9 +392,28 @@
                                                     <input type="text" name="pf_deduction" @if(isset($employee['salary']->pf_deduction)) value="{{$employee['salary']->pf_deduction}}" @else value="{{old('pf_deduction')}}" @endif class="form-control" placeholder="Enter Salary"/>
                                                 </div>
                                             </div>
+                                             <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Bank Name</label>
+                                                    <input type="text" name="bank_name" aria-describedby="bank_name" @if(isset($employee['salary']->bank_name)) value="{{$employee['salary']->bank_name}}" @else value="{{old('bank_name')}}" @endif   class="form-control " placeholder="Enter Bank Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Branch Name</label>
+                                                    <input type="text" name="branch_name" aria-describedby="branch_name" @if(isset($employee['salary']->branch_name)) value="{{$employee['salary']->branch_name}}" @else value="{{old('branch_name')}}" @endif  class="form-control " placeholder="Enter Branch Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="control-label">Account Number</label>
+                                                    <input type="text" name="account_number" aria-describedby="account_number" @if(isset($employee['salary']->account_number)) value="{{$employee['salary']->account_number}}" @else value="{{old('account_number')}}" @endif  class="form-control " placeholder="Enter Account Number">
+                                                </div>
+                                            </div>
                                             <div class="col-12">
                                                 <b>Note:</b> PF deduction is excluded from gross salary and it will be deducted at the time of salary generation.
                                             </div>
+
                                         </div>
 
                                         <hr>

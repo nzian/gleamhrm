@@ -158,6 +158,10 @@ class EmployeeController extends Controller
         // salary create
         $salary = new Salary();
         $salary->gross_salary = $request->gross_salary;
+        $salary->bank_name = $request->bank_name ?? '';
+        $salary->branch_name = $request->branch_name ?? '';
+        $salary->account_number = $request->account_number ?? '';
+
         $salary->employee_id = $employee_id;
         $salary->save();
 
@@ -414,6 +418,10 @@ class EmployeeController extends Controller
                     $employee['salary']->meal_allowance = $request->meal_allowance;
                     $employee['salary']->conveyance_allowance = $request->conveyance_allowance;
                     $employee['salary']->pf_deduction = $request->pf_deduction;
+                    $employee['salary']->bank_name = $request->bank_name ?? '';
+                    $employee['salary']->branch_name = $request->branch_name?? '';
+                    $employee['salary']->account_number = $request->account_number ?? '';
+
                     $employee['salary']->save();
                 } else {
                     $salary = new Salary();
@@ -425,6 +433,10 @@ class EmployeeController extends Controller
                     $salary->meal_allowance = $request->meal_allowance;
                     $salary->conveyance_allowance = $request->conveyance_allowance;
                     $salary->pf_deduction = $request->pf_deduction;
+                    $employee['salary']->bank_name = $request->bank_name ?? '';
+                    $employee['salary']->branch_name = $request->branch_name?? '';
+                    $employee['salary']->account_number = $request->account_number ?? '';
+
                     $salary->employee_id = $employee->id;
                     $salary->save();
                 }

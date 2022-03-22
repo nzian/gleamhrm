@@ -98,6 +98,61 @@
             </ul>
           </li>
         @endif
+
+        @if(Auth::user()->isAllowed('AssetController:index') || Auth::user()->isAllowed('AssetController:available') || Auth::user()->isAllowed('AssetController:handOver') || Auth::user()->isAllowed('AssetController:returned') || Auth::user()->isAllowed('AssetController:inactive'))
+          <li @if(request()->is('asset') || str_contains(Request::fullUrl(),'asset/available') || str_contains(Request::fullUrl(),'asset/handover') || str_contains(Request::fullUrl(),'asset/returned') || str_contains(Request::fullUrl(),'asset/inactive')) class="nav-item menu-open" @else class="nav-item" @endif>
+            <a href="#" @if(request()->is('asset')|| str_contains(Request::fullUrl(),'asset/available') || str_contains(Request::fullUrl(),'asset/handover') || str_contains(Request::fullUrl(),'asset/returned') || str_contains(Request::fullUrl(),'asset/inactive')) class="nav-link active" @else class="nav-link" @endif>
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Asset Management
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              @if(Auth::user()->isAllowed('AssetController:index'))
+                <li class="nav-item">
+                  <a href="{{ route('asset.index') }}" @if(str_contains(Request::fullUrl(),'asset') && !str_contains(Request::fullUrl(),'available') && !str_contains(Request::fullUrl(), 'handover') && !str_contains(Request::fullUrl(), 'inactive') && !str_contains(Request::fullUrl(), 'returned')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Assets</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('AssetController:available'))
+                <li class="nav-item">
+                  <a href="{{route('asset.available')}}" @if(str_contains(Request::fullUrl(),'available')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Available</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('AssetController:handOver'))
+                <li class="nav-item">
+                  <a href="{{route('asset.handover')}}" @if(str_contains(Request::fullUrl(),'handover')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Handover</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('AssetController:returned'))
+                <li class="nav-item">
+                  <a href="{{route('asset.returned')}}" @if(str_contains(Request::fullUrl(),'returned'))  class="nav-link active" @else  class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Returned</p>
+                  </a>
+                </li>
+              @endif
+              @if(Auth::user()->isAllowed('AssetController:inactive'))
+                <li class="nav-item">
+                  <a href="{{route('asset.inactive')}}" @if(str_contains(Request::fullUrl(),'inactive'))  class="nav-link active" @else  class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Inactive</p>
+                  </a>
+                </li>
+              @endif
+            </ul>
+          </li>
+        @endif
+
         @if(Auth::user()->isAllowed('ApplicantController:index') && Auth::user()->isAllowed('JobsController:index'))
           <li @if(request()->is('applicants/hired') || request()->is('job') || request()->is('applicant') || request()->is('job/create') || request()->is('job/*/edit')) class="nav-item menu-open" @else class="nav-item" @endif>
             <a href="#" @if(request()->is('applicants/hired') || request()->is('job') || request()->is('applicant') || request()->is('job/create') || request()->is('job/*/edit')) class="nav-link active" @else class="nav-link" @endif>
@@ -128,9 +183,9 @@
           </li>
         @endif
 
-        @if(Auth::user()->isAllowed('EmployeeController:index') || Auth::user()->isAllowed('OrganizationHierarchyController:index') || Auth::user()->isAllowed('TeamController:index') || Auth::user()->isAllowed('VendorController:index'))
-          <li @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member')) class="nav-item menu-open" @else class="nav-item" @endif>
-            <a href="#" @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member')) class="nav-link active" @else class="nav-link" @endif>
+        @if(Auth::user()->isAllowed('EmployeeController:index') || Auth::user()->isAllowed('OrganizationHierarchyController:index') || Auth::user()->isAllowed('TeamController:index') || Auth::user()->isAllowed('VendorController:index') || Auth::user()->isAllowed('DeciplinaryController:index'))
+          <li @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('desciplinary') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member') || request()->is('desciplinary/create') || request()->is('desciplinary/edit/*') ) class="nav-item menu-open" @else class="nav-item" @endif>
+            <a href="#" @if( request()->is('employees')  || request()->is('teams') || request()->is('vendors') || request()->is('desciplinary') || request()->is('vendor/create') || request()->is('vendor/edit/*')  || str_contains( Request::fullUrl(),'organization_hierarchy') || request()->is('employee/create') || request()->is('employee/edit/*') || str_contains(Request::fullUrl(),'team_member')|| request()->is('desciplinary/create') || request()->is('desciplinary/edit/*')) class="nav-link active" @else class="nav-link" @endif>
               <i class="nav-icon fas fa-user"></i>
               <p>
                 People Management
@@ -154,6 +209,14 @@
                   </a>
                 </li>
               @endif
+              @if(Auth::user()->isAllowed('DesiplinaryController:index'))
+                <li class="nav-item">
+                  <a href="{{route('desciplinaries.index')}}" @if(request()->is('desciplinary') || request()->is('desciplinary/create') || request()->is('desciplinary/edit/*')) class="nav-link active" @else class="nav-link" @endif>
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Desciplinary</p>
+                  </a>
+                </li>
+              @endif
               @if(Auth::user()->isAllowed('VendorController:index'))
                 <li class="nav-item">
                   <a href="{{route('vendors.index')}}" @if(request()->is('vendors') || request()->is('vendor/create') || request()->is('vendor/edit/*')) class="nav-link active" @else class="nav-link" @endif>
@@ -165,6 +228,29 @@
             </ul>
           </li>
         @endif
+
+        @if(Auth::user()->isAllowed('NoticeController:index'))
+        <li @if(request()->is('notice') || request()->is('notice/create') || request()->is('notice/edit/*'))) class="nav-item menu-open" @else class="nav-item" @endif>
+          <a href="#" @if(request()->is('notice') || request()->is('notice/create') || request()->is('notice/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
+            <i class="nav-icon mdi mdi-apps pl-1"></i>
+            <p>
+              Manage Notice
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            @if(Auth::user()->isAllowed('NoticeController:index'))
+              <li class="nav-item">
+                <a href="{{route('notices.index')}}" @if(request()->is('notice') || request()->is('notice/create') || request()->is('notice/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Notice</p>
+                </a>
+              </li>
+            @endif
+          </ul>
+        </li>
+        @endif
+
         @if(Auth::user()->isAllowed('RolePermissionsController:index'))
         <li @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-item menu-open" @else class="nav-item" @endif>
           <a href="#" @if(request()->is('roles') || request()->is('role/create') || request()->is('role/edit/*'))) class="nav-link active" @else class="nav-link" @endif>
@@ -233,6 +319,7 @@
             </li>
           </ul>
         </li>
+
         <li @if(str_contains(Request::fullUrl(),'documents') || str_contains(Request::fullUrl(),'branch') || str_contains(Request::fullUrl(),'department') || str_contains(Request::fullUrl(),'designations') || request()->is('leaveTypes') || request()->is('skills') || request()->is('assign_skill/edit/*') || request()->is('vendors/category') || request()->is('platform') || request()->is('platform/edit')) class="nav-item menu-open" @else class="nav-item" @endif>
           <a href="#" @if( str_contains(Request::fullUrl(),'documents') || str_contains(Request::fullUrl(),'branch') || str_contains(Request::fullUrl(),'department') || str_contains(Request::fullUrl(),'designations') || request()->is('leaveTypes')  || request()->is('skills') || request()->is('assign_skill/edit/*') || request()->is('vendors/category') || request()->is('platform') || request()->is('platform/edit')) class="nav-link active" @else class="nav-link" @endif>
             <i class="nav-icon fas fa-cog"></i>

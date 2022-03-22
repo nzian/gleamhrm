@@ -14,4 +14,8 @@ class Team extends Model
     {
         return $this->belongsTo('App\Department', 'department_id');
     }
+
+    public function desciplinaries() {
+        return $this->hasMany(Desciplinary::class);
+    }
 }

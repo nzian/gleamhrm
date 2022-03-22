@@ -11,6 +11,6 @@ class Salary extends Model
 
     protected $dates = ['deleted_at'];
     protected $fillable = [
-        'gross_salary', 'basic_salary', 'home_allowance', 'medical_allowance', 'special_allowance', 'meal_allowance', 'conveyance_allowance', 'pf_deduction', 'employee_id',
+        'gross_salary', 'basic_salary', 'home_allowance', 'medical_allowance', 'special_allowance', 'meal_allowance', 'conveyance_allowance', 'pf_deduction', 'bank_name', 'branch_name', 'account_number', 'employee_id'
     ];
 }

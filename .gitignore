@@ -17,3 +17,5 @@ public
 public/css/*
 yarn.lock
 .history
+to-do
+storage/debugbar
