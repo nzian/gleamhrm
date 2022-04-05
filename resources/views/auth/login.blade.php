@@ -9,7 +9,7 @@
 
 <!-- Main Content Start -->
 <div class="text-center">
-  <a href="#"><b>HRM</b> | @if(isset($platform->name)) {{$platform->name}} @else Company Name @endif</a>
+  <a href="{{route('home')}}"><b>HRM</b> | @if(isset($platform->name)) {{$platform->name}} @else Company Name @endif</a>
 </div>
 
 <div class="card-body">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="mt-3">
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="submit" id="login" class="btn btn-primary btn-block">Login</button>
         </div>
     </form>
 </div>
@@ -77,8 +77,16 @@
             },
             unhighlight: function (element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
+            },
+            success: function() {
+                $('#login').on('click', function() {
+                $('#login').attr('disabled', true);
+                $('#loginForm').submit();
+            });
             }
+
         });
+        
     });
 </script>
 @stop

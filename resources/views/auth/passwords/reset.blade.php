@@ -8,7 +8,7 @@
 
 <!-- Main Content Start -->
 <div class="text-center">
-  <a href="#"><b>HRM</b> | @if(isset($platform->name)) {{$platform->name}} @else Company Name @endif</a>
+  <a href="{{route('home')}}"><b>HRM</b> | @if(isset($platform->name)) {{$platform->name}} @else Company Name @endif</a>
 </div>
 
 <div class="card-body">

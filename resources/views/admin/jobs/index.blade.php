@@ -58,12 +58,14 @@
 											<td>{{isset($job->department_id) ? $job->department->department_name : ''}}</td>
 											<td>{{isset($job->branch_id) ? $job->branch->name.'('.$job->branch->address.')': ''}}</td>
 											<td>
-												@foreach($skills as $skill) 
-													@foreach(json_decode($job->skill) as $key) 
-														@if($skill->id==$key)
-															<p class="btn btn-sm btn-success">{{$skill->skill_name}}</p>
-														@endif
-													@endforeach
+												@foreach($skills as $skill)
+													@if(json_decode($job->skill))
+														@foreach(json_decode($job->skill) as $key) 
+															@if($skill->id==$key)
+																<p class="btn btn-sm btn-success">{{$skill->skill_name}}</p>
+															@endif
+														@endforeach
+													@endif
 												@endforeach
 											</td>
 											<td class="text-nowrap">
